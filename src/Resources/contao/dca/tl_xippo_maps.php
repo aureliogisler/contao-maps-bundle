@@ -64,7 +64,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps'] = [
 				'tl_class'=>'long',
 				'includeBlankOption'=>true
 			],
-			'sql' => "varchar(64) NOT NULL default ''"
+			'sql' => [ 'type' => 'string', 'length' => 64, 'notnull' => true, 'default' => '' ],
 		],
         'height' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['height'],
@@ -72,47 +72,47 @@ $GLOBALS['TL_DCA']['tl_xippo_maps'] = [
 			'inputType' => 'inputUnit',
 			'options' => ['px', '%', 'vh'],
 			'eval' => [
-				'rgxp'=>'digit_auto_inherit',
-				'tl_class'=>'long',
-				'includeBlankOption'=>true
+				'rgxp' => 'digit_auto_inherit',
+				'tl_class' => 'long',
+				'includeBlankOption' => true
 			],
-			'sql' => "varchar(64) NOT NULL default ''"
+			'sql' => [ 'type' => 'string', 'length' => 64, 'notnull' => true, 'default' => '' ],
 		],
 		'center_geox' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['center_geox'],
 			'exclude' => true,
 			'inputType' => 'text',
-			'eval' => ['maxlength'=>20, 'tl_class'=>'w50 wizard', 'require_input'=>true],
-			'sql' => "varchar(20) NOT NULL default ''"
+			'eval' => ['maxlength' => 20, 'tl_class' => 'w50 wizard', 'require_input' => true],
+			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '' ],
 		],
         'center_geoy' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['center_geoy'],
 			'exclude' => true,
 			'inputType' => 'text',
-			'eval' => ['maxlength'=>20, 'tl_class'=>'w50 wizard', 'require_input'=>true],
-			'sql' => "varchar(20) NOT NULL default ''"
+			'eval' => ['maxlength' => 20, 'tl_class' => 'w50 wizard', 'require_input' => true],
+			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '' ],
 		],
 		'zoom' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['zoom'],
 			'exclude' => true,
 			'inputType' => 'text',
 			'default' => '10',
-			'eval' => ['tl_class'=>'clr'],
-			'sql' => "varchar(20) NOT NULL default '10'"
+			'eval' => ['tl_class' => 'clr'],
+			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '10' ],
 		],
 		'cssClass' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssClass'],
             'exclude' => true,
 			'inputType' => 'text',
 			'eval' => [ 'maxlength'=>128, 'tl_class'=>'w50'],
-			'sql' => "varchar(128) NOT NULL default ''"
+			'sql' => [ 'type' => 'string', 'length' => 128, 'notnull' => true, 'default' => '' ],
 		],
         'cssID' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssID'],
             'exclude' => true,
             'inputType' => 'text',
             'eval' => [ 'multiple' => true, 'size' => 2, 'tl_class' => 'w50 clr', ],
-            'sql' => "varchar(255) NOT NULL default ''",
+            'sql' => [ 'type' => 'string', 'length' => 255, 'notnull' => true, 'default' => '' ],
         ],
     ],
     'palettes' => [

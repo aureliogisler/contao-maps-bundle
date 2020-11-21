@@ -1,4 +1,4 @@
-<?php foreach($this->timelineItems as $timelineItem): ?>
+
 	<article class="timeline-entry">
 		<div class="timeline-entry-inner">
 			<div class="timeline-icon bg-success"> <i class="entypo-feather"></i></div>
@@ -15,4 +15,3 @@
 			</div>
 		<div>
 	</article>
-<?php endforeach; ?>

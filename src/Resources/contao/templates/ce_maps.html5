@@ -1,8 +1,6 @@
 <!-- contao/templates/ce_maps.html5 -->
 <section>
-	<?php if($this->maps->mapsMarkerCount > 0): ?>
 	<div class="maps-centered <?= $this->cssID ?>" class="<?= $this->class ?>">
-		<?php $this->insert('ce_maps_marker', $this->arrData); ?>
+		
 	</div>
-	<?php endif; ?>
 </section>
