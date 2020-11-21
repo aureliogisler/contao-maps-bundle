@@ -1,0 +1,14 @@
+services:
+    xippogmbh_contao_maps_bundle.dca_helper:
+            class: XippoGmbH\ContaoMapsBundle\Dca\Helper
+            public: true
+            arguments:
+                - '@security.token_storage'
+    xippogmbh_contao_maps_bundle.content_element:
+        class: XippoGmbH\ContaoMapsBundle\Controller\ContentElement\ContentMapsController
+        arguments:
+            - '@contao.framework'
+        tags:
+            - { name: contao.content_element, category: xippo_elements, template: ce_maps, type: maps_id }
+            - { name: container.service_subscriber }
+        public: true

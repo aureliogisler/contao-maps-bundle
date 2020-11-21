@@ -1,0 +1,18 @@
+<?php foreach($this->timelineItems as $timelineItem): ?>
+	<article class="timeline-entry">
+		<div class="timeline-entry-inner">
+			<div class="timeline-icon bg-success"> <i class="entypo-feather"></i></div>
+			<div class="timeline-entry-text">
+				<time class="timeline-time" datetime="2018-05-23 00:00">
+					<h2><?= $timelineItem->date ?></h2>
+				</time>
+				<div class="timeline-label">
+					<?= $timelineItem->description ?>
+				</div>
+			<div>
+			<div class="timeline-entry-image">
+				<img src="<?= $timelineItem->image->getOriginalPath() ?>">
+			</div>
+		<div>
+	</article>
+<?php endforeach; ?>
