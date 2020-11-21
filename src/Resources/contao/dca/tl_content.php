@@ -1,6 +1,6 @@
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_xippo_maps_marker';
-$GLOBALS['TL_DCA']['tl_content']['fields'][maps_id'] = [
+$GLOBALS['TL_DCA']['tl_content']['fields']['maps_id'] = [
 			'label' => &$GLOBALS['TL_LANG']['tl_content']['maps_id'],
 			'inputType' => 'select',
 			'foreignKey' => 'tl_xippo_maps.title',
