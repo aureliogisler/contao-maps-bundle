@@ -1,23 +1,12 @@
-<?php
-/**
- * This file is part of a Xippo GmbH Contao Maps Bundle.
- *
- * (c) Aurelio Gisler (Xippo GmbH)
- *
- * @author     Aurelio Gisler
- * @package    ContaoMaps
- * @license    MIT
- * @see        https://github.com/xippoGmbH/contao-maps-bundle
- *
- */
-
-
-/**
- * Fields
- */
-$GLOBALS['TL_LANG']['tl_content']['maps_id'] = array('Karte', 'Bitte wählen Sie eine Karte aus.');
-
-/**
- * Legends
- */
-$GLOBALS['TL_LANG']['tl_content']['maps_legend'] = 'Karte';
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/de/tl_content.php" source-language="de">
+    <body>
+      <trans-unit id="MOD.maps.0">
+        <source>Maps</source>
+      </trans-unit>
+      <trans-unit id="MOD.maps.1">
+        <source>Maps Darstellung</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
