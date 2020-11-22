@@ -74,7 +74,6 @@ class ContentMapsController extends AbstractContentElementController
 					$img = new Image($file);
 
 					$imgSize = $file->imageSize;
-					// TODO: implement image size
 
 					$tempMapsMarker->image = $img;
 				}
