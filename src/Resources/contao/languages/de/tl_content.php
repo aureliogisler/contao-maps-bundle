@@ -15,7 +15,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_content']['mapsId'] = array('Karte', 'Bitte wähle eine Karte aus.');
+$GLOBALS['TL_LANG']['tl_content']['content_maps'] = array('Karte', 'Bitte wähle eine Karte aus.');
 
 /**
  * Legends
