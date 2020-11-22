@@ -1,27 +1,23 @@
 <!-- contao/templates/ce_maps.html5 -->
+<!-- indexer::stop -->
 <section>
-	<?= $this->showTemplateVars(); ?>
-	<div id="mapdiv<?= $this->id ?> <?= $this->cssID ?>" class="<?= $this->class ?>" style="height: <?= $this->maps->height ?>; width: <?= $this->maps->width ?>;"></div>
-	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+	<div id="mapdiv<?= $this->id ?> <?= $this->cssID ?>" class="<?= $this->class ?>" 
+	style="height: <?= $this->maps->mapHeight['value'] . "" . $this->maps->mapHeight['unit'] ?>; width: <?= $this->maps->mapWidth['value'] . "" . $this->maps->mapWidth['unit'] ?>;"></div>
 	<?php if($this->maps->mapsMarkerCount > 0): ?>
-	<script>
-		map = new OpenLayers.Map("mapdiv<?= $this->id ?>");
-		map.addLayer(new OpenLayers.Layer.OSM());
+	<script>map = new OpenLayers.Map("mapdiv<?= $this->id ?>");</script>
+		<script>map.addLayer(new OpenLayers.Layer.OSM());</script>
 
-		var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )
-			  .transform(
-				new OpenLayers.Projection("EPSG:4326"), // Transformation aus dem Koordinatensystem WGS 1984
-				map.getProjectionObject() // in das Koordinatensystem 'Spherical Mercator Projection'
-			  );
+		<script>var centerPoint = new OpenLayers.LonLat( <?= $this->maps->center_geoy ?> , <?= $this->maps->center_geox ?> ).transform(new OpenLayers.Projection("CRS:84"), map.getProjectionObject());</script>
+		<script>var markers = new OpenLayers.Layer.Markers( "Markers" );</script>
+		<script>map.addLayer(markers);</script>
+		
+		<?php $this->insert('ce_maps_marker', $this->arrData); ?>
 			  
-		var zoom=<?= $this->maps->zoom ?>;
-
-		var markers = new OpenLayers.Layer.Markers( "Markers" );
-		map.addLayer(markers);
+		<script>var zoom=<?= $this->maps->zoom ?>;</script>
 		
-		markers.addMarker(new OpenLayers.Marker(lonLat));
+		<script>map.setCenter (centerPoint, zoom);</script>
 		
-		map.setCenter (lonLat, zoom);
-	</script>
+		<?php $this->insert('ce_maps_marker_content', $this->arrData); ?>
 	<?php endif; ?>
 </section>
+<!-- indexer::continue -->

@@ -54,6 +54,8 @@ class ContentMapsController extends AbstractContentElementController
 		$tempMapsMarkers = MapsMarkerModel::findBy('pid', $maps->id, $options);
 		
 		$maps->mapsMarkerCount = count($tempMapsMarkers);
+		$maps->mapHeight = \StringUtil::deserialize($maps->height);
+		$maps->mapWidth = \StringUtil::deserialize($maps->width);
 		
 		$template->maps = $maps;
         $mapsMarkers = [];
