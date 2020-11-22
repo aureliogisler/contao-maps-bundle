@@ -9,6 +9,6 @@ services:
         arguments:
             - '@contao.framework'
         tags:
-            - { name: contao.content_element, category: xippo_elements, template: ce_maps, type: content_maps }
+            - { name: contao.content_element, category: xippo_elements, template: ce_maps, type: xippo_maps }
             - { name: container.service_subscriber }
         public: true
