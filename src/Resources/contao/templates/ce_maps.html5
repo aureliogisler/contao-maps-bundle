@@ -1,6 +1,7 @@
 <!-- contao/templates/ce_maps.html5 -->
 <section>
-	<div id="mapdiv<?= $this->id ?> <?= $this->cssID ?>" class="<?= $this->class ?>" style="height: <?= $this->height ?>; width: <?= $this->width ?>;"></div>
+	<?= $this->showTemplateVars(); ?>
+	<div id="mapdiv<?= $this->id ?> <?= $this->cssID ?>" class="<?= $this->class ?>" style="height: <?= $this->maps->height ?>; width: <?= $this->maps->width ?>;"></div>
 	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 	<?php if($this->maps->mapsMarkerCount > 0): ?>
 	<script>
@@ -13,7 +14,7 @@
 				map.getProjectionObject() // in das Koordinatensystem 'Spherical Mercator Projection'
 			  );
 			  
-		var zoom=<?= $this->zoom ?>;
+		var zoom=<?= $this->maps->zoom ?>;
 
 		var markers = new OpenLayers.Layer.Markers( "Markers" );
 		map.addLayer(markers);
