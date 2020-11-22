@@ -69,6 +69,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
 			'sql' => ['type' => 'integer', 'unsigned' => true, 'notnull' => true, 'default' => 0 ],
 		],
         'title' => [
+			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['title'],
             'exclude' => true,
             'inputType' => 'text',
             'eval' => [
@@ -78,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
             'sql' => ['type' => 'string', 'length' => 255, 'notnull' => true, 'default' => ''],
         ],
 		'addImage' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_content']['addImage'],
+			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['addImage'],
 			'exclude' => true,
 			'inputType' => 'checkbox',
 			'eval' => ['submitOnChange'=>true],
@@ -100,7 +101,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
             ],
         ],
 		'size' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_content']['size'],
+			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['size'],
 			'exclude' => true,
 			'inputType' => 'imageSize',
 			'reference' => &$GLOBALS['TL_LANG']['MSC'],
@@ -141,7 +142,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
         ],
     ],
     'palettes' => [
-        'default' => '{maps_legend},title,geox,geoy;{date_legend},date;{image_legend},addImage;{expert_legend:hide},cssID,cssClass;',
+        'default' => '{maps_legend},title,geox,geoy;{image_legend},addImage;{expert_legend:hide},cssID,cssClass;',
 		'__selector__' => [ 'addImage' ]
     ],
 	'subpalettes' => [
