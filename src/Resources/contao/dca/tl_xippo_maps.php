@@ -101,14 +101,14 @@ $GLOBALS['TL_DCA']['tl_xippo_maps'] = [
 			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '10' ],
 		],
 		'cssClass' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssClass'],
+			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['cssClass'],
             'exclude' => true,
 			'inputType' => 'text',
 			'eval' => [ 'maxlength'=>128, 'tl_class'=>'w50'],
 			'sql' => [ 'type' => 'string', 'length' => 128, 'notnull' => true, 'default' => '' ],
 		],
         'cssID' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssID'],
+			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['cssID'],
             'exclude' => true,
             'inputType' => 'text',
             'eval' => [ 'multiple' => true, 'size' => 2, 'tl_class' => 'w50 clr', ],
