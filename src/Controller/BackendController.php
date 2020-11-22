@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
 
 /**
- * @Route("/contao/xippo-bs-slider-route",
+ * @Route("/contao/xippo-maps-route",
  *     name=BackendController::class,
  *     defaults={"_scope" = "backend"}
  * )

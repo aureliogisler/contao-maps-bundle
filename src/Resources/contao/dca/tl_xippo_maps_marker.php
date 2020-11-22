@@ -13,13 +13,10 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
     ],
     'list' => [
         'sorting' => [
-            'mode' => 4,
-            'fields' => ['sorting'],
-			'panelLayout' => 'filter;search,limit',
-            'headerFields' => ['title'],
-			'child_record_callback' => function (array $row) {
-                return '<div class="tl_content_left">'.$row['title'].'</div>';
-            },
+            'mode' => 1,
+            'fields' => ['title'],
+            'flag' => 1,
+            'panelLayout' => 'search,limit'
         ],
         'label' => [
             'fields' => ['title'],
@@ -65,9 +62,6 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
         'tstamp' => [
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0],
         ],
-		'sorting' => [
-			'sql' => ['type' => 'integer', 'unsigned' => true, 'notnull' => true, 'default' => 0 ],
-		],
         'title' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['title'],
             'exclude' => true,
@@ -126,13 +120,6 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
 			'eval' => ['maxlength' => 20, 'tl_class' => 'w50 wizard', 'require_input' => true ],
 			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '' ],
 		],
-		'cssClass' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssClass'],
-            'exclude' => true,
-			'inputType' => 'text',
-			'eval' => [ 'maxlength'=>128, 'tl_class'=>'w50'],
-			'sql' => [ 'type' => 'string', 'length' => 128, 'notnull' => true, 'default' => '' ],
-		],
         'cssID' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_bs_slide']['cssID'],
             'exclude' => true,
@@ -142,7 +129,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
         ],
     ],
     'palettes' => [
-        'default' => '{maps_legend},title,geox,geoy;{image_legend},addImage;{expert_legend:hide},cssID,cssClass;',
+        'default' => '{maps_legend},title,geox,geoy;{image_legend},addImage;{expert_legend:hide},cssID;',
 		'__selector__' => [ 'addImage' ]
     ],
 	'subpalettes' => [

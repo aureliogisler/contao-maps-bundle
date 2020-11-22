@@ -100,13 +100,6 @@ $GLOBALS['TL_DCA']['tl_xippo_maps'] = [
 			'eval' => ['tl_class' => 'clr'],
 			'sql' => [ 'type' => 'string', 'length' => 20, 'notnull' => true, 'default' => '10' ],
 		],
-		'cssClass' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['cssClass'],
-            'exclude' => true,
-			'inputType' => 'text',
-			'eval' => [ 'maxlength'=>128, 'tl_class'=>'w50'],
-			'sql' => [ 'type' => 'string', 'length' => 128, 'notnull' => true, 'default' => '' ],
-		],
         'cssID' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps']['cssID'],
             'exclude' => true,
@@ -116,6 +109,6 @@ $GLOBALS['TL_DCA']['tl_xippo_maps'] = [
         ],
     ],
     'palettes' => [
-        'default' => '{maps_legend},title;{maps_detail_legend},width,height,center_geox,center_geoy,zoom;{expert_legend:hide},cssID,cssClass;'
+        'default' => '{maps_legend},title;{maps_detail_legend},width,height,center_geox,center_geoy,zoom;{expert_legend:hide},cssID;'
     ],
 ];
