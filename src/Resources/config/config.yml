@@ -1,3 +1,0 @@
-twig:
-    paths:
-        '%kernel.project_dir%/vendor/xippogmbh/contao-maps-bundle/src/Resources/views': 'ContaoMapsBundle'
