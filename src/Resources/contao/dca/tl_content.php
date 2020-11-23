@@ -1,3 +1,7 @@
+<?php
+
+declare(strict_types=1);
+
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_xippo_maps_marker';
 $GLOBALS['TL_DCA']['tl_content']['fields']['content_maps'] = [
