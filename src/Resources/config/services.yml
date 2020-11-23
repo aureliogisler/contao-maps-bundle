@@ -10,3 +10,6 @@ services:
 
     # Content elements
     XippoGmbH\ContaoMapsBundle\Controller\ContentElement\ContentMapsController: ~
+    XippoGmbH\ContaoMapsBundle\Model\MapsMarkerModel: ~
+    XippoGmbH\ContaoMapsBundle\Model\MapsModel: ~
+    XippoGmbH\ContaoMapsBundle\Dca\Helper: ~

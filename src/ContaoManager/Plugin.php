@@ -30,12 +30,4 @@ class Plugin implements BundlePluginInterface
                 ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
-	
-	/**
-     * {@inheritdoc}
-     */
-    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
-    {
-        return $loader->load(__DIR__.'/../Resources/config/config.yml');
-    }
 }
