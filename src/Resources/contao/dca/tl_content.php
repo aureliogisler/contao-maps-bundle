@@ -14,4 +14,4 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['content_maps'] = [
 				'includeBlankOption' => true
 			]
 		];
-$GLOBALS['TL_DCA']['tl_content']['palettes']['content_maps'] = '{type_legend},type,headline;{maps_legend},content_maps;{protected_legend:hide},protected;{expert_legend:hide},guests,invisible,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['content_maps'] = '{type_legend},type,headline;{maps_legend},content_maps;{protected_legend:hide},protected;{expert_legend:hide},guests,invisible,cssID,space;';
