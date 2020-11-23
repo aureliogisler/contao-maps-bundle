@@ -1,15 +1,3 @@
 services:
     _defaults:
         autoconfigure: true
-        public: false
-
-    _instanceof:
-        Contao\CoreBundle\Framework\FrameworkAwareInterface:
-            calls:
-                - ["setFramework", ["@contao.framework"]]
-
-    # Content elements
-    XippoGmbH\ContaoMapsBundle\Controller\ContentElement\ContentMapsController: ~
-    XippoGmbH\ContaoMapsBundle\Model\MapsMarkerModel: ~
-    XippoGmbH\ContaoMapsBundle\Model\MapsModel: ~
-    XippoGmbH\ContaoMapsBundle\Dca\Helper: ~

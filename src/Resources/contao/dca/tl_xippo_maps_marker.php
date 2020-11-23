@@ -72,40 +72,6 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
             ],
             'sql' => ['type' => 'string', 'length' => 255, 'notnull' => true, 'default' => ''],
         ],
-		'addImage' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['addImage'],
-			'exclude' => true,
-			'inputType' => 'checkbox',
-			'eval' => ['submitOnChange'=>true],
-			'sql' => ['type' => 'string', 'length' => 1, 'fixed' => true, 'notnull' => true, 'default' => ''],
-		],
-		'singleSRC' => [
-            'exclude' => true,
-            'inputType' => 'fileTree',
-            'eval' => [
-                'fieldType' => 'radio',
-                'files' => true,
-                'filesOnly' => true,
-                'extensions' => \Config::get('validImageTypes'),
-                'mandatory' => false,
-            ],
-            'sql' => [ 'type' => 'binary', 'length' => 16, 'notnull' => false ],
-            'save_callback' => [
-                ['xippogmbh_contao_maps_bundle.dca_helper', 'storeFileMetaInformation'],
-            ],
-        ],
-		'size' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['size'],
-			'exclude' => true,
-			'inputType' => 'imageSize',
-			'reference' => &$GLOBALS['TL_LANG']['MSC'],
-			'eval' => ['rgxp'=>'natural', 'includeBlankOption'=>true, 'nospace'=>true, 'helpwizard'=>true, 'tl_class'=>'w50'],
-			'options_callback' => static function ()
-			{
-				return System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(BackendUser::getInstance());
-			},
-			'sql' => [ 'type' => 'string', 'length' => 64, 'notnull' => true, 'default' => '' ],
-		],
 		'geox' => [
 			'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['geox'],
 			'exclude' => true,
@@ -129,11 +95,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
         ],
     ],
     'palettes' => [
-        'default' => '{maps_legend},title,geox,geoy;{image_legend},addImage;{expert_legend:hide},cssID;',
-		'__selector__' => [ 'addImage' ]
+        'default' => '{maps_legend},title,geox,geoy;{expert_legend:hide},cssID;'
     ],
-	'subpalettes' => [
-		'addImage' => 'singleSRC,size;'
-	],
 ];
 
