@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace XippoGmbH\MapsBundle\Controller
+namespace XippoGmbH\MapsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
