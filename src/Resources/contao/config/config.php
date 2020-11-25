@@ -11,9 +11,8 @@
  *
  */
 // Backend modules
-$GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_content';
-$GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_xippo_maps';
-$GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_xippo_maps_marker';
+$GLOBALS['BE_MOD']['content']['xippo_maps'] = ['tables' => ['tl_xippo_maps','tl_xippo_maps_marker','tl_content'],];
+
 // Models
 $GLOBALS['TL_MODELS']['tl_xippo_maps'] = \XippoGmbH\MapsBundle\Model\MapsModel::class;
 $GLOBALS['TL_MODELS']['tl_xippo_maps_marker'] = \XippoGmbH\MapsBundle\Model\MapsMarkerModel::class;
