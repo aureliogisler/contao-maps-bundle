@@ -10,7 +10,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Contao Maps Bundle">
+        <testsuite name="Xippo GmbH Contao Maps Bundle">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

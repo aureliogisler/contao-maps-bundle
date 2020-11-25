@@ -1,24 +1,21 @@
 <?php
-/**
- * This file is part of a Xippo GmbH Contao Maps Bundle.
+
+/*
+ * This file is part of xippogmbh/maps-bundle.
  *
  * (c) Aurelio Gisler (Xippo GmbH)
  *
- * @author     Aurelio Gisler
- * @package    ContaoMaps
- * @license    MIT
- * @see        https://github.com/xippoGmbH/contao-maps-bundle
- *
+ * @license LGPL-3.0-or-later
  */
 
-namespace XippoGmbH\ContaoMapsBundle\DependencyInjection;
+namespace XippoGmbH\MapsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class ContaoMapsExtension extends Extension
+class XippoGmbHMapsExtension extends Extension
 {
     /**
      * {@inheritdoc}

@@ -1,18 +1,18 @@
 <?php
-/**
- * This file is part of a Xippo GmbH Contao Maps Bundle.
+/*
+ * This file is part of xippogmbh/maps-bundle.
  *
  * (c) Aurelio Gisler (Xippo GmbH)
  *
  * @author     Aurelio Gisler
- * @package    ContaoMaps
+ * @package    XippoGmbHMaps
  * @license    MIT
  * @see        https://github.com/xippoGmbH/contao-maps-bundle
  *
  */
 declare(strict_types=1);
 
-namespace XippoGmbH\ContaoMapsBundle\Controller\ContentElement;
+namespace XippoGmbH\MapsBundle\Controller;
 
 use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -23,15 +23,12 @@ use Contao\Frontend;
 use Contao\Image;
 use Contao\Model;
 use Contao\Template;
-use XippoGmbH\ContaoMapsBundle\Model\MapsModel;
-use XippoGmbH\ContaoMapsBundle\Model\MapsMarkerModel;
+use XippoGmbH\MapsBundle\Model\MapsModel;
+use XippoGmbH\MapsBundle\Model\MapsMarkerModel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="xippo_elements")
- */
-class ContentMapsController extends AbstractContentElementController
+class MapsController extends AbstractContentElementController
 {
 	public function __construct(ContaoFramework $framework)
     {

@@ -1,3 +1,17 @@
 services:
-    _defaults:
-        autoconfigure: true
+    _instanceof:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
+            calls:
+                - ["setFramework", ["@contao.framework"]]
+
+        Symfony\Component\DependencyInjection\ContainerAwareInterface:
+            calls:
+                - ["setContainer", ["@service_container"]]
+    # Contao content element XippoGmbH\MapsBundle\Controller\MapsController
+    XippoGmbH\MapsBundle\Controller\MapsController:
+        arguments:
+            - '@contao.framework'
+        tags:
+            - { name: contao.content_element, category: xippo_elements, template: ce_maps, type: map_element }
+            - { name: container.service_subscriber }
+        public: true

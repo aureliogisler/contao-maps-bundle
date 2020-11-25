@@ -1,8 +1,18 @@
 <?php
-
+// contao/dca/tl_xippo_maps_marker.php
+/*
+ * This file is part of xippogmbh/maps-bundle.
+ *
+ * (c) Aurelio Gisler (Xippo GmbH)
+ *
+ * @author     Aurelio Gisler
+ * @package    XippoGmbHMaps
+ * @license    MIT
+ * @see        https://github.com/xippoGmbH/contao-maps-bundle
+ *
+ */
 declare(strict_types=1);
 
-// contao/dca/tl_xippo_maps_marker.php
 $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
     'config' => [
         'dataContainer' => 'Table',

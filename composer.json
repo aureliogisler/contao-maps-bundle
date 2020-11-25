@@ -1,22 +1,24 @@
 {
-    "name": "xippogmbh/contao-maps-bundle",
+    "name": "xippogmbh/maps-bundle",
     "type": "contao-bundle",
-    "description": "Maps Bundle for Contao 4",
-    "homepage": "https://www.xippo.ch",
+    "description": "OSM Bundle for contao 4",
+    "homepage": "https://github.com/xippoGmbH/contao-maps-bundle",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
-            "name": "Xippo GmbH",
-            "homepage": "https://github.com/xippogmbh"
+            "name": "Aurelio Gisler",
+            "homepage": "https://github.com/xippoGmbH"
+        },
+        {
+            "name": "Contao Community",
+            "homepage": "https://contao.org/contributors"
         }
     ],
     "require": {
         "php": "^5.6 || ^7.0",
-        "contao/core-bundle": "^4.9",
-        "symfony/framework-bundle": "^4"
+        "contao/core-bundle": "4.4.*",
+        "symfony/framework-bundle": "^3.3"
     },
-	"prefer-stable": true,
-    "minimum-stability": "dev",
     "conflict": {
         "contao/core": "*",
         "contao/manager-plugin": "<2.0 || >=3.0"
@@ -27,24 +29,24 @@
         "friendsofphp/php-cs-fixer": "^2.12",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message-factory": "^1.0.2",
-		"phpunit/phpunit": "^5.7.26",
+        "phpunit/phpunit": "^5.7.26",
         "symfony/phpunit-bridge": "^3.2"
     },
     "extra": {
-        "contao-manager-plugin": "XippoGmbH\\ContaoMapsBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "XippoGmbH\\MapsBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "XippoGmbH\\ContaoMapsBundle\\": "src/"
+            "XippoGmbH\\MapsBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "XippoGmbH\\ContaoMapsBundle\\Tests\\": "tests/"
+            "XippoGmbH\\MapsBundle\\Tests\\": "tests/"
         }
     },
     "support": {
-        "issues": "https://github.com/xippogmbh/contao-maps-bundle/issues",
-        "source": "https://github.com/xippogmbh/contao-maps-bundle"
+        "issues": "https://github.com/xippoGmbH/contao-maps-bundle/issues",
+        "source": "https://github.com/xippoGmbH/contao-maps-bundle"
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/**
- * This file is part of a Xippo GmbH Contao Maps Bundle.
+/*
+ * This file is part of xippogmbh/maps-bundle.
  *
  * (c) Aurelio Gisler (Xippo GmbH)
  *
  * @author     Aurelio Gisler
- * @package    ContaoMaps
+ * @package    XippoGmbHMaps
  * @license    MIT
  * @see        https://github.com/xippoGmbH/contao-maps-bundle
  *
  */
 declare(strict_types=1);
 
-namespace XippoGmbH\ContaoMapsBundle\Model;
+namespace XippoGmbH\MapsBundle\Model;
 
 use Contao\Model;
 

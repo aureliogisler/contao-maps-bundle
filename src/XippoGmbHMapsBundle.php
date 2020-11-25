@@ -1,20 +1,19 @@
 <?php
-/**
- * This file is part of a Xippo GmbH Contao Maps Bundle.
+/*
+ * This file is part of xippogmbh/maps-bundle.
  *
  * (c) Aurelio Gisler (Xippo GmbH)
  *
  * @author     Aurelio Gisler
- * @package    ContaoMaps
+ * @package    XippoGmbHMaps
  * @license    MIT
  * @see        https://github.com/xippoGmbH/contao-maps-bundle
  *
  */
-
-namespace XippoGmbH\ContaoMapsBundle;
+namespace XippoGmbH\MapsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoMapsBundle extends Bundle
+class XippoGmbHMapsBundle extends Bundle
 {
 }
