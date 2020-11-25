@@ -11,7 +11,7 @@
  *
  */
 // Backend modules
-$GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'l_content';
+$GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_content';
 $GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_xippo_maps';
 $GLOBALS['BE_MOD']['content']['xippo_maps']['tables'][] = 'tl_xippo_maps_marker';
 // Models
