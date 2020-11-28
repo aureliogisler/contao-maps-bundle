@@ -60,17 +60,35 @@ class MapsController extends AbstractContentElementController
 			{
 				\System::log('Maps Item ID: ' . $tempMapsMarker->id, __METHOD__, TL_GENERAL);
 
-				if($tempMapsMarker->singleSRC != '')
-				{
-					$fileModel = FilesModel::findByUuid($tempMapsMarker->singleSRC);
+                $elements = [];
 
-					$file = new \File($fileModel->path);
-					$img = new Image($file);
+				$content = ContentModel::findPublishedByPidAndTable($tempMapsMarker->id, 'tl_xippo_maps_marker');
 
-					$imgSize = $file->imageSize;
+				if (null !== $content) {
+					$count = 0;
+					$last = $content->count() - 1;
 
-					$tempMapsMarker->image = $img;
+					while ($content->next()) {
+						$css = [];
+
+						/** @var ContentModel $objRow */
+						$row = $content->current();
+
+						if (0 === $count) {
+							$css[] = 'first';
+						}
+
+						if ($count === $last) {
+							$css[] = 'last';
+						}
+
+						$row->classes = $css;
+						$elements[] = Frontend::getContentElement($row, $model->strColumn);
+						++$count;
+					}
 				}
+
+				$tempMapsMarker->content = $elements;
 
 				$mapsMarkers[] = $tempMapsMarker;
 			}
