@@ -1,4 +1,9 @@
 <?php foreach($this->mapsMarkers as $mapsMarker): ?>
-	<script>var mapsMarker<?= $mapsMarker->id ?> = new OpenLayers.LonLat( <?= $mapsMarker->geoy ?> , <?= $mapsMarker->geox ?> ).transform(new OpenLayers.Projection("CRS:84"), map.getProjectionObject());</script>
-	<script>markers.addMarker(new OpenLayers.Marker(mapsMarker<?= $mapsMarker->id ?>));</script>
+	<script>
+		var size = new OpenLayers.Size(21,32);
+		var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+		var icon = new OpenLayers.Icon('files/ahs/icons/MarkerBlack.png', size, offset);
+		var mapsMarker<?= $mapsMarker->id ?> = new OpenLayers.LonLat( <?= $mapsMarker->geox ?> , <?= $mapsMarker->geoy ?> ).transform(new OpenLayers.Projection("CRS:84"), map.getProjectionObject());
+		markers.addMarker(new OpenLayers.Marker(mapsMarker<?= $mapsMarker->id ?>, icon));
+	</script>
 <?php endforeach; ?>
