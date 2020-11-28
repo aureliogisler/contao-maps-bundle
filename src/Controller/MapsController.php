@@ -37,7 +37,7 @@ class MapsController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-		/* $maps = MapsModel::findBy('id', $model->maps_id);
+		$maps = MapsModel::findBy('id', $model->maps_id);
 
 		if (!$maps instanceof MapsModel) {
             return $template->getResponse();
@@ -79,7 +79,7 @@ class MapsController extends AbstractContentElementController
 			}
 		}
 
-		$template->mapsMarkers = $mapsMarkers; */
+		$template->mapsMarkers = $mapsMarkers;
 
         return $template->getResponse();
     }
