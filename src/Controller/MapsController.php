@@ -34,39 +34,39 @@ class MapsController extends AbstractContentElementController
     {
         $this->framework = $framework;
     }
-	
+
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-		$maps = MapsModel::findBy('id', $model->maps_id);
-		
+		/* $maps = MapsModel::findBy('id', $model->maps_id);
+
 		if (!$maps instanceof MapsModel) {
             return $template->getResponse();
         }
-		
+
 		\System::log('Maps gefunden, die ID ist: ' . $maps->id, __METHOD__, TL_GENERAL);
-		
+
 		$options = [
 			'order' => 'sorting ASC'
 		];
 		$tempMapsMarkers = MapsMarkerModel::findBy('pid', $maps->id, $options);
-		
+
 		$maps->mapsMarkerCount = count($tempMapsMarkers);
 		$maps->mapHeight = \StringUtil::deserialize($maps->height);
 		$maps->mapWidth = \StringUtil::deserialize($maps->width);
-		
+
 		$template->maps = $maps;
         $mapsMarkers = [];
-		
-		if($tempMapsMarkers->count() > 0) 
+
+		if($tempMapsMarkers->count() > 0)
 		{
 			foreach($tempMapsMarkers as $tempMapsMarker)
 			{
 				\System::log('Maps Item ID: ' . $tempMapsMarker->id, __METHOD__, TL_GENERAL);
-				
+
 				if($tempMapsMarker->singleSRC != '')
 				{
 					$fileModel = FilesModel::findByUuid($tempMapsMarker->singleSRC);
-				
+
 					$file = new \File($fileModel->path);
 					$img = new Image($file);
 
@@ -74,13 +74,13 @@ class MapsController extends AbstractContentElementController
 
 					$tempMapsMarker->image = $img;
 				}
-				
+
 				$mapsMarkers[] = $tempMapsMarker;
 			}
 		}
-		
-		$template->mapsMarkers = $mapsMarkers;
-		
+
+		$template->mapsMarkers = $mapsMarkers; */
+
         return $template->getResponse();
     }
 }
