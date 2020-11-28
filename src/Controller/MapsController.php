@@ -37,7 +37,7 @@ class MapsController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-		$maps = MapsModel::findBy('id', $model->maps_id);
+		$maps = MapsModel::findBy('id', $model->content_maps);
 
 		if (!$maps instanceof MapsModel) {
             return $template->getResponse();
@@ -45,10 +45,7 @@ class MapsController extends AbstractContentElementController
 
 		\System::log('Maps gefunden, die ID ist: ' . $maps->id, __METHOD__, TL_GENERAL);
 
-		$options = [
-			'order' => 'sorting ASC'
-		];
-		$tempMapsMarkers = MapsMarkerModel::findBy('pid', $maps->id, $options);
+		$tempMapsMarkers = MapsMarkerModel::findBy('pid', $maps->id);
 
 		$maps->mapsMarkerCount = count($tempMapsMarkers);
 		$maps->mapHeight = \StringUtil::deserialize($maps->height);
