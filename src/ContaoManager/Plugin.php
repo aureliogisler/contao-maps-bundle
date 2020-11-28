@@ -25,7 +25,7 @@ class Plugin implements BundlePluginInterface
     {
         return [
             BundleConfig::create(XippoGmbHMapsBundle::class)
-                ->setLoadAfter([ContaoCalendarBundle::class]),
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 }
