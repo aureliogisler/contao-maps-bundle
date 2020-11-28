@@ -12,7 +12,10 @@
  *
  */
 
-//$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_xippo_maps_marker';
+if($this->Input->get('do') == 'xippo_maps')
+{
+    $GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_xippo_maps_marker';
+}
 $GLOBALS['TL_DCA']['tl_content']['fields']['content_maps'] = [
 			'label' => &$GLOBALS['TL_LANG']['tl_content']['content_maps'],
 			'inputType' => 'select',
