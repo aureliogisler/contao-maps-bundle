@@ -1,25 +1,78 @@
 <!-- contao/templates/ce_maps.html5 -->
 <!-- indexer::stop -->
-<section>
-	<div id="mapdiv<?= $this->id ?>" class="<?= $this->class ?>" style="height: 500px;"></div>
-	<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-	<script>
-		map = new OpenLayers.Map("mapdiv<?= $this->id ?>");
-		map.addLayer(new OpenLayers.Layer.OSM());
+<div class="mod_article fullwidth block">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+	<div class="contentwrap">
+		<div id="mapdiv<?= $this->id ?>" class="<?= $this->class ?>" style="height: 500px;"></div>
+	</div>
+</div>
+	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+
+
+		<?php if($this->maps->mapsMarkerCount > 0): ?>
+			<script type="text/javascript">
+
+				var iconStyle = new ol.style.Style({image: new ol.style.Icon({anchor: [0.5, 46], anchorXUnits: 'fraction', anchorYUnits: 'pixels', src: 'files/ahs/icons/MarkerBlack.png',}),});
+				var iconStyleClicked = new ol.style.Style({image: new ol.style.Icon({anchor: [0.5, 46], anchorXUnits: 'fraction', anchorYUnits: 'pixels', src: 'files/ahs/icons/MarkerRed.png',}),});
+				var vectorSource = new ol.source.Vector();
+				<?php foreach($this->mapsMarkers as $mapsMarker): ?>
+					var point<?= $mapsMarker->id ?> = new ol.geom.Point([<?= $mapsMarker->geox ?>, <?= $mapsMarker->geoy ?>]);
+					var marker<?= $mapsMarker->id ?> = new ol.Feature({geometry: point<?= $mapsMarker->id ?>, name: '<?= $mapsMarker->title ?>', id: 'markerContent<?= $mapsMarker->id ?>'});
+					marker<?= $mapsMarker->id ?>.setStyle(iconStyle);
+					vectorSource.addFeature(marker<?= $mapsMarker->id ?>);
+				<?php endforeach; ?>
+
+			</script>
+
+			<?php foreach($this->mapsMarkers as $mapsMarker): ?>
+				<div class="mod_article fullwidth block">
+					<div class="block boxed-content max_width_full">
+						<div id="markerContent<?= $mapsMarker->id ?>" class="markerContainer" style="display: none;">
+							<?= implode('', $mapsMarker->content) ?>
+						</div>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		<?php endif; ?>
+
+	<script type="text/javascript">
+		var vectorLayer = new ol.layer.Vector({source: vectorSource,});
+
+		var map = new ol.Map({
+			target: 'mapdiv<?= $this->id ?>',
+			layers: [
+				new ol.layer.Tile({
+					source: new ol.source.OSM()
+				}),
+				vectorLayer
+			],
+			view: new ol.View({
+				projection: 'CRS:84',
+				center: [<?= $this->maps->center_geoy ?>, <?= $this->maps->center_geox ?>],
+				zoom: <?= $this->maps->zoom ?>
+			})
+		});
+
+		map.on('click', function (evt) {
+			var feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+			return feature;
+			});
+
+			if (feature) {
+				var featureProps = feature.getProperties();
+				var div = jQuery('#' + featureProps.id);
+				if(div != null) {
+					var divs = jQuery('.markerContainer');
+					divs.hide();
+					var features = vectorSource.getFeatures()
+					for (var k in features) {
+						features[k].setStyle(iconStyle);
+					}
+					feature.setStyle(iconStyleClicked);
+					div.show();
+				}
+			}
+		});
 	</script>
 
-	<?php if($this->maps->mapsMarkerCount > 0): ?>
-		<script>
-			var markers = new OpenLayers.Layer.Markers( "Markers" );
-			map.addLayer(markers);
-		</script>
-		<?php $this->insert('ce_maps_marker', $this->arrData); ?>
-		<?php $this->insert('ce_maps_marker_content', $this->arrData); ?>
-	<?php endif; ?>
-	<script>
-		var centerPoint = new OpenLayers.LonLat( <?= $this->maps->center_geoy ?> , <?= $this->maps->center_geox ?> ).transform(new OpenLayers.Projection("CRS:84"), map.getProjectionObject());
-		var zoom=<?= $this->maps->zoom ?>;
-		map.setCenter (centerPoint, zoom);
-	</script>
-</section>
 <!-- indexer::continue -->

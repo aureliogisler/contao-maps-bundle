@@ -1,5 +1,0 @@
-<?php foreach($this->mapsMarkers as $mapsMarker): ?>
-	<div id="markerContent<?= $mapsMarker->id ?>" class="marker">
-		<?= implode('', $mapsMarker->content) ?>
-	</div>
-<?php endforeach; ?>

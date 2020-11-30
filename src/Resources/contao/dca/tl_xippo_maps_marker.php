@@ -46,7 +46,7 @@ $GLOBALS['TL_DCA']['tl_xippo_maps_marker'] = [
             ],
 			'copy' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_xippo_maps_marker']['copy'],
-				'href' => 'act=page&amp;mode=copy',
+				'href' => 'act=copy&amp;mode=copy',
 				'icon' => 'copy.gif'
 			],
 			'cut' => [
